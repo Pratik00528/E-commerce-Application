@@ -13,19 +13,19 @@ export const createProductController = async (req, res) => {
 
         switch (true) {
             case !name:
-                return res.send({ error: "Name is required!" })
+                return res.send({ message: "Name is required!" })
             case !description:
-                return res.send({ error: "Description is required!" })
+                return res.send({ message: "Description is required!" })
             case !price:
-                return res.send({ error: "Price is required!" })
+                return res.send({ message: "Price is required!" })
             case !category:
-                return res.send({ error: "Category is required!" })
+                return res.send({ message: "Category is required!" })
             case !quantity:
-                return res.send({ error: "Quantity is required!" })
+                return res.send({ message: "Quantity is required!" })
             case !shipping:
-                return res.send({ error: "Shipping is required!" })
+                return res.send({ message: "Shipping is required!" })
             case !photo || photo.size > 100000:
-                return res.send({ error: "Photo is required and it should be less than 1 MB" })
+                return res.send({ message: "Photo is required and it should be less than 1 MB" })
         }
 
         const product = new productModel({ ...req.fields, slug: slugify(name) })
@@ -149,19 +149,19 @@ export const updateProductController = async (req, res) => {
 
         switch (true) {
             case !name:
-                return res.send({ error: "Name is required!" })
+                return res.send({ message: "Name is required!" })
             case !description:
-                return res.send({ error: "Description is required!" })
+                return res.send({ message: "Description is required!" })
             case !price:
-                return res.send({ error: "Price is required!" })
+                return res.send({ message: "Price is required!" })
             case !category:
-                return res.send({ error: "Category is required!" })
+                return res.send({ message: "Category is required!" })
             case !quantity:
-                return res.send({ error: "Quantity is required!" })
+                return res.send({ message: "Quantity is required!" })
             case !shipping:
-                return res.send({ error: "Shipping is required!" })
+                return res.send({ message: "Shipping is required!" })
             case !photo || photo.size > 100000:
-                return res.send({ error: "Photo is required and it should be less than 1 MB" })
+                return res.send({ message: "Photo is required and it should be less than 1 MB" })
         }
 
         const product = await productModel.findByIdAndUpdate(req.params.pid,

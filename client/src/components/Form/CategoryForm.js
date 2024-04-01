@@ -9,7 +9,7 @@ export const CategoryForm = ({ handleSubmit, value, setValue }) => {
                         value={value} onChange={(e) => setValue(e.target.value)} />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Add</button>
             </form>
         </>
     )
