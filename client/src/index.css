@@ -98,3 +98,9 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Product Link CSS */
+.product-link{
+  text-decoration: none !important;
+  color: black !important;
+}
