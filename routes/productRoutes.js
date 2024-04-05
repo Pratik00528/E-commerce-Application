@@ -1,6 +1,6 @@
 import express from "express";
 import { isAdmin, requireSignIn } from './../middlewares/authMiddleware.js';
-import { createProductController, deleteProductController, getProductController, getSingleProductController, productPhotoController, updateProductController } from "../controllers/productController.js";
+import { createProductController, deleteProductController, getProductController, getSingleProductController, productFiltersController, productPhotoController, updateProductController } from "../controllers/productController.js";
 import formidable from "express-formidable"; // Package for parsing images
 
 const router = express.Router();
@@ -22,5 +22,8 @@ router.delete('/delete-product/:pid', deleteProductController)
 
 // Update product
 router.put('/update-product/:pid', requireSignIn, isAdmin, formidable(), updateProductController);
+
+// Filter product
+router.post('/product-filters', productFiltersController);
 
 export default router; 
