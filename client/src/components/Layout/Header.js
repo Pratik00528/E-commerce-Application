@@ -4,6 +4,7 @@ import { HiShoppingBag } from "react-icons/hi2";
 import { useAuth } from '../../Context/Auth';
 import toast from 'react-hot-toast';
 import { Dashboard } from './../../pages/user/Dashboard';
+import { SearchInput } from '../Form/SearchInput';
 
 export const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -32,6 +33,7 @@ export const Header = () => {
               <HiShoppingBag style={{ color: "#52CC7A", size: "50px" }} /> E-commerce App
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <SearchInput />
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to="/">
                   Home
