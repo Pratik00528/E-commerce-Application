@@ -26,7 +26,7 @@ export const Layout = (props) => {
 };
 
 Layout.defaultProps = {
-  title: "E-commerce App",
+  title: "Zecio",
   description: "This is an E-commerce application",
   keywords: "MERN stack project",
   author: "Pratik",

@@ -1,6 +1,21 @@
 import productModel from "../models/productModel.js"
 import fs from "fs"
 import slugify from "slugify";
+import categoryModel from "../models/categoryModel.js"
+import braintree from "braintree";
+import orderModel from "../models/orderModel.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
+// Payment Gateway
+var gateway = new braintree.BraintreeGateway({
+    environment: braintree.Environment.Sandbox,
+    merchantId: process.env.BRAINTREE_MERCHANT_ID,
+    publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+    privateKey: process.env.BRAINTREE_PRIVATE_KEY,
+});
 
 
 export const createProductController = async (req, res) => {
@@ -242,7 +257,7 @@ export const productCountController = async (req, res) => {
 export const productListController = async (req, res) => {
     try {
 
-        const perPage = 2
+        const perPage = 3
         const page = req.params.page ? req.params.page : 1
 
         const products = await productModel.find({}).select("-photo").skip((page - 1) * perPage).limit(perPage).sort({ createdAt: -1 })
@@ -288,3 +303,115 @@ export const searchProductController = async (req, res) => {
 
     }
 }
+
+// Similar Products
+export const relatedProductController = async (req, res) => {
+    try {
+
+        const { pid, cid } = req.params;
+
+        const products = await productModel
+            .find({
+                category: cid,
+                _id: { $ne: pid },
+            })
+            .select("-photo")
+            .limit(3)
+            .populate("category");
+
+        res.status(200).send({
+            success: true,
+            products,
+        });
+
+    } catch (error) {
+        console.log(error)
+        res.send({
+            success: false,
+            message: "Error in getting similar products.",
+            error
+        })
+
+    }
+}
+
+// Getting products by category
+export const productCategoryController = async (req, res) => {
+    try {
+        const category = await categoryModel.findOne({ slug: req.params.slug })
+        const products = await productModel.find({ category }).populate("category")
+
+        res.status(200).send({
+            success: true,
+            message: "Categories wise products fetched successfully",
+            category,
+            products,
+        })
+
+    } catch (error) {
+        console.log(error)
+        res.send({
+            success: false,
+            message: "Error while getting products by category",
+            error
+        })
+
+    }
+
+}
+
+// Payment Gateway API
+// Token
+export const braintreeTokenController = async (req, res) => {
+
+    try {
+        gateway.clientToken.generate({}, function (err, response) {
+            if (err) {
+                res.send(err)
+            }
+            else {
+                res.send(response)
+
+            }
+        })
+
+    } catch (error) {
+        console.log(error)
+
+    }
+
+}
+
+// Payment
+export const braintreePaymentController = async (req, res) => {
+    try {
+        const { nonce, cart } = req.body;
+        let total = 0;
+        cart.map((i) => {
+            total += i.price;
+        });
+        let newTransaction = gateway.transaction.sale(
+            {
+                amount: total,
+                paymentMethodNonce: nonce,
+                options: {
+                    submitForSettlement: true,
+                },
+            },
+            function (error, result) {
+                if (result) {
+                    const order = new orderModel({
+                        products: cart,
+                        payment: result,
+                        buyer: req.user._id,
+                    }).save();
+                    res.json({ ok: true });
+                } else {
+                    res.send(error);
+                }
+            }
+        );
+    } catch (error) {
+        console.log(error);
+    }
+};

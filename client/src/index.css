@@ -24,6 +24,10 @@
   font-weight: 300 !important;
 }
 
+.active {
+  border-bottom: 2px solid black;
+}
+
 .navbar-brand{
   font-weight: 700;
   letter-spacing: 2px;
@@ -32,6 +36,18 @@
 .navbar li:hover{
   border-bottom:2px solid black;
 
+}
+
+.search-form {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.search-form input {
+  border: none;
+}
+.search-form button {
+  background-color: #000000;
+  color: white;
 }
 
 /* Footer CSS */
@@ -103,4 +119,27 @@
 .product-link{
   text-decoration: none !important;
   color: black !important;
+}
+
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+/* ================
+====dashboard
+=================== */
+
+.dashboard {
+  margin-top: 100px !important;
+}
+
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 20px 0px;
 }

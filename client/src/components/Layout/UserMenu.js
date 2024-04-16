@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom'
 export const UserMenu = () => {
     return (
         <>
-            <div className="text-center">
+            <div className="text-center dashboard-menu">
                 <div className="list-group">
-                    <h3>Dashboard</h3>
+                    <h4>Dashboard</h4>
                     <NavLink to="/dashboard/user/profile" className="list-group-item list-group-item-action">
                         Profile
                     </NavLink>
