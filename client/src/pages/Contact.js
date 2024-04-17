@@ -5,7 +5,7 @@ import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 export const Contact = () => {
   return (
     <Layout title="Contact Us">
-      <div className="row contactus ">
+      <div className="row contactus" style={{ minHeight: "90vh" }}>
         <div className="col-md-6 ">
           <img
             src="/images/contactus.jpeg"
@@ -16,11 +16,11 @@ export const Contact = () => {
         <div className="col-md-4">
           <h1 className="bg-dark p-2 text-white text-center">CONTACT US</h1>
           <p className="text-justify mt-2">
-            any query and info about prodduct feel free to call anytime we 24X7
-            vaialible
+            Feel free to reach out to us anytime for any questions or concerns related to our products
+            or website. Our dedicated customer support team is here to assist you promptly and effectively.
           </p>
           <p className="mt-3">
-            <BiMailSend /> : www.help@ecommerceapp.com
+            <BiMailSend /> : www.help@zecio.com
           </p>
           <p className="mt-3">
             <BiPhoneCall /> : 012-3456789

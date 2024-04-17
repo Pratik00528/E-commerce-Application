@@ -47,7 +47,7 @@ export const Login = () => {
     }
     return (
         <Layout title="Login Page">
-            <div className="form-container">
+            <div className="form-container" style={{ minHeight: "95vh" }}>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <h4 className="title">Login</h4>

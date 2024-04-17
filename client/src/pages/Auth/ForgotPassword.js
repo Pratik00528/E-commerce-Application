@@ -40,7 +40,7 @@ export const ForgotPassword = () => {
 
     return (
         <Layout title="Forgot Password">
-            <div className="form-container">
+            <div className="form-container" style={{ minHeight: "95vh" }}>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <h4 className="title">Forgot Password</h4>

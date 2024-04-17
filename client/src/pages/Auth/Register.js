@@ -44,7 +44,7 @@ export const Register = () => {
 
     return (
         <Layout title="Registration Page">
-            <div className="form-container">
+            <div className="form-container" style={{ minHeight: "95vh" }}>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <h4 className="title">Registration Form</h4>
