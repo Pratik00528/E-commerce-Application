@@ -10,6 +10,50 @@ Welcome to ZECIO, your ultimate destination for all your online shopping needs! 
 
 ## Screenshots
 
+![Home page](./screenshots/Homepage2.png)
+
+![Products](./screenshots/products1.png)
+
+![Products](./screenshots/products2.png)
+
+![Products](./screenshots/products3.png)
+
+![Categories](./screenshots/Categories.png)
+
+![Product Details](./screenshots/productDetails.png)
+
+![Similar Products](./screenshots/similarProducts.png)
+
+![Filters](./screenshots/filters.png)
+
+![Search](./screenshots/search.png)
+
+![Login Page](./screenshots/Login.png)
+
+![Sign Up Page](./screenshots/Signup.png)
+
+![Cart](./screenshots/Cart.png)
+
+![Cart Summary](./screenshots/cartSummary.png)
+
+![Payment](./screenshots/payment.png)
+
+![User Orders](./screenshots/userOrders.png)
+
+![Create Category](./screenshots/createCategory.png)
+
+![Create Product](./screenshots/createProduct.png)
+
+![Admin Orders](./screenshots/adminOrders.png)
+
+
+
+
+
+
+
+
+
 
 
 ## Features
