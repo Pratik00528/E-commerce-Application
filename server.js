@@ -35,9 +35,14 @@ app.use('/api/v1/category', categoryRoutes); // Category Route
 app.use('/api/v1/product', productRoutes); // Product Route
 
 // REST API
-app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
-})
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 
 // PORT -> for running our server
 const PORT = process.env.PORT || 8080;
