@@ -1,10 +1,10 @@
-# ZECIO - Your Ultimate Gadget Store
+# ZECIO - Your Ultimate Store
 
 ## Overview
 
-Welcome to ZECIO, your one-stop destination for the latest gadgets and tech accessories! Built with cutting-edge technologies and seamless user experience in mind, ZECIO offers a wide range of products to fulfill your tech needs.
+Welcome to ZECIO, your ultimate destination for all your online shopping needs! ZECIO is a feature-rich e-commerce platform built with cutting-edge technologies to provide you with a seamless and secure shopping experience.
 
-## Experience the Weather App live! Visit the application at:
+## Experience the Zecio App live! Visit the application at:
 
 [Live Zecio App](https://zecio.cyclic.app/)
 
