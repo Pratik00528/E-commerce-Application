@@ -35,13 +35,9 @@ app.use('/api/v1/category', categoryRoutes); // Category Route
 app.use('/api/v1/product', productRoutes); // Product Route
 
 // REST API
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-1whq.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.get('/', (req, res) => {
+    res.send("<h1> Welcome to E-commmerce app!</h1>")
+})
 
 
 // PORT -> for running our server
