@@ -6,7 +6,7 @@ Welcome to ZECIO, your ultimate destination for all your online shopping needs! 
 
 ## Experience the Zecio App live! Visit the application at:
 
-[Live Zecio App](https://zecio.cyclic.app/)
+[Live Zecio App](https://zecio-frontend.onrender.com/)
 
 ## Screenshots
 
